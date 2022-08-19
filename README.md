@@ -12,6 +12,10 @@ This is just a simple tuner project, aiming for two goals:
 If you're interest in contributing, please feel free to open a PR.
 
 ## Project setup
+
+If you use ASDF to manage your Node.js versions, it will prompt you to install the appropriate Node.js version, if you don't have it already installed.
+Anyway, the Node.js version used to build and test this project is listed in the `.tool-versions` file.
+
 ```
 npm install
 ```
