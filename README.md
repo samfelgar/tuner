@@ -1,4 +1,15 @@
-# tuner
+# Tuner
+
+## Description
+
+This is just a simple tuner project, aiming for two goals:
+
+1. Practice my Javascript and Web Audio API skills;
+2. Tune my guitars :)
+
+## Contributing
+
+If you're interest in contributing, please feel free to open a PR.
 
 ## Project setup
 ```
@@ -7,7 +18,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run dev
 ```
 
 ### Compiles and minifies for production
@@ -19,6 +30,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
