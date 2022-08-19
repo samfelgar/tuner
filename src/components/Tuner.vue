@@ -1,5 +1,5 @@
 <template>
-  <section class="tuner" :class="{'out-of-tune': direction !== 'OK!', 'in-tune': direction === 'OK!'}">
+  <section class="tuner" :class="{ 'out-of-tune': direction !== 'OK!', 'in-tune': direction === 'OK!' }">
     <div>{{ note }}</div>
     <div>
       {{ frequency.toFixed(2) }}Hz
@@ -49,17 +49,17 @@ export default {
       let detectedKey = null;
       let direction = '';
 
-      for (const [key, freq] of notesRange) {
-        const octaves = this.calculateOctaves(freq);
+      for (const [key, frequency] of notesRange) {
+        const octaves = this.calculateOctaves(frequency);
 
-        for (let i = 0; i < octaves.length; i++) {
-          const currentDiff = this.frequency - octaves[i];
+        for (const octaveFrequency of octaves) {
+          const currentDiff = this.frequency - octaveFrequency;
           const unsignedDiff = this.unsignedDiff(currentDiff);
 
           if (unsignedDiff < diff) {
             diff = unsignedDiff;
             detectedKey = key;
-            direction = this.getDirection(octaves[i], currentDiff)
+            direction = this.getDirection(octaveFrequency, currentDiff)
           }
         }
       }
@@ -70,9 +70,9 @@ export default {
     },
 
     calculateOctaves(frequency) {
-      const intervals = [];
       let prev = frequency;
-      intervals.push(prev);
+
+      const intervals = [prev];
 
       for (let i = 0; i < 8; i++) {
         const next = prev * 2;
